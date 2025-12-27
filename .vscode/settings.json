@@ -4,7 +4,7 @@
         "titleBar.activeBackground": "#c705c4"
     },
     // Python/ Pylance settings
-    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.typeCheckingMode": "strict",
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "python.analysis.autoSearchPaths": true,
     "python.analysis.extraPaths": [

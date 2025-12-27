@@ -16,6 +16,11 @@ class Email:
 
     subject: str
     body: str
-    recipients: list[str] = field(default_factory=list)
-    cc_recipients: list[str] = field(default_factory=list)
-    bcc_recipients: list[str] = field(default_factory=list)
+    recipients: list[str] = field(default_factory=list[str])
+    cc_recipients: list[str] = field(default_factory=list[str])
+    bcc_recipients: list[str] = field(default_factory=list[str])
+
+    def __post_init__(self) -> None:
+        self.recipients = [""]
+        self.cc_recipients = [""]
+        self.bcc_recipients = [""]
