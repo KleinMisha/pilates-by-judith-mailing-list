@@ -1,26 +1,22 @@
 """
-Internal representation of an Email
+Data models
 """
 
-from dataclasses import dataclass
-from dataclasses import field
+from pydantic import BaseModel, EmailStr, Field
 
 
-@dataclass
-class Email:
-    """
-    basic representation of an email.
-
-    #Todo: maybe use Pydantic to use the EmailStr type if that is beneficial
-    """
+class Email(BaseModel):
+    """Internal representation of an email."""
 
     subject: str
     body: str
-    recipients: list[str] = field(default_factory=list[str])
-    cc_recipients: list[str] = field(default_factory=list[str])
-    bcc_recipients: list[str] = field(default_factory=list[str])
+    recipients: list[EmailStr] = Field(default_factory=list)
+    cc_recipients: list[EmailStr] = Field(default_factory=list)
+    bcc_recipients: list[EmailStr] = Field(default_factory=list)
 
-    def __post_init__(self) -> None:
-        self.recipients = [""]
-        self.cc_recipients = [""]
-        self.bcc_recipients = [""]
+
+class DraftMessageResponse(BaseModel):
+    """How we model the response from a POST request for an email draft message"""
+
+    id: int
+    email: Email
