@@ -1,5 +1,5 @@
 from src.email import Email
-from src.msgraph_requests import construct_message_json
+from src.msgraph_service import construct_message_json
 
 
 def main():
@@ -29,10 +29,6 @@ def main():
     """
 
     print("Hello from pilates-by-judith-mailing-list!")
-
-    email = Email(subject="nothing", body="....")
-    json_data = construct_message_json(email)
-    print(json_data)
 
 
 if __name__ == "__main__":
