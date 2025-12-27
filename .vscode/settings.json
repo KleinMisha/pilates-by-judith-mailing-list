@@ -18,4 +18,9 @@
     "python.testing.pytestArgs": [
         "test"
     ],
+    // dictionary settings 
+    "cSpell.ignoreWords": [
+        "ms",
+        "msgraph"
+    ]
 }
